@@ -86,6 +86,12 @@ server.get('/app',isntLoggedIn, function(req,res){
 });
 
 server.get('/',isLoggedIn, function(req,res){
+	res.render('home',{
+		saludo: 'Login System'
+	});
+});
+
+server.get('/index',isLoggedIn, function(req,res){
 	res.render('index',{
 		prueba: 'hola que hace',
 		menuDemo2: menu

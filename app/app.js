@@ -21,19 +21,13 @@ define(['services/routeResolver'],function () {
 		angular.forEach(APP.DATA.CONFIG.MENU, function(obj){
 			$routeProvider.when('/'+obj.temp, route.resolve(obj.temp));
 		});
+		//rutas fijas
+		$routeProvider.when('/404', route.resolve('404'));
+		$routeProvider.when('/', route.resolve('home'));
 
+		$routeProvider.when('/', { redirectTo: '/home' });
 		$routeProvider.otherwise({ redirectTo: '/404' });
 	}]);
-
-	// app.controller('tempideasController', ['$scope', function ($scope) {
-	// 	var ng = $scope;
-	// 	ng.saludo = 'Hola soy el IDEAS';
-	// }]);
-
-	// app.controller('tempinicioController', ['$scope', function ($scope) {
-	// 	var ng = $scope;
-	// 	ng.saludo = 'Hola soy el IINICIOS';
-	// }]);
 
 	app.controller('appController', ['$scope','$http','dataResource', function($scope,$http,dataResource) {
 	    var ng = $scope;

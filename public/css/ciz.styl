@@ -84,7 +84,7 @@ header
 				width 4%
 				.submenu
 					background grey900
-					box-shadow shadow2
+					box-shadow shadow4
 					color white
 					position absolute
 					width 155px
@@ -110,9 +110,8 @@ header
 					height 48px
 					border-radius 50%
 					transition all 0.2s linear
-					&:hover
-						box-shadow shadow2
-						// transform scale(1.1)
+					&:hover,&:active, &:focus
+						box-shadow shadow4
 					&:hover ~ .submenu
 						max-height 200px
 				.logo
@@ -156,7 +155,8 @@ html, body
 	-webkit-animation logoAnimation 2.5s
 
 .loading-mask
-	background rgba(grey900,.7)
+	// background rgba(grey900,.7)
+	background grey900
 	width 100%
 	height 100%
 	position fixed
@@ -164,7 +164,141 @@ html, body
 	left 0
 	z-index 1
 	
+//log-in
+.login
+	display inline-block
+	float right
+	background white
+	color grey800
+	height 100%
+	width 25%
+	text-align center
+	z-index 0
+	text-shadow textshadow1
+	box-shadow shadow5
+	position relative
+
+.contenedor-login
+	position absolute
+	top 20%
+	margin-left auto
+	margin-right auto
+	left 0
+	right 0
+	
 //Commons
+.btn
+	position relative
+	border-radius 2px
+	padding 10px 20px 10px 20px
+	border none
+	transition all .2s ease-in-out
+	overflow hidden
+	&:hover
+		box-shadow shadow1
+
+.btn-small
+	width 40%
+.btn-mediun
+	width 80%
+.btn-large
+	width 100%
+	
+.button-error
+	background red400
+	color rgba(white,0.8)
+	&:hover
+		color rgba(white,1)
+.button-warning
+	background amber200
+	color rgba(grey900,0.8)
+	&:hover
+		color rgba(grey900,1)
+.button-normal
+	background rgba(grey100,1)
+	color rgba(grey900,0.8)
+	&:hover
+		color rgba(grey900,1)
+		
+.control-button
+	button
+		span
+			position relative
+			z-index 3
+			small
+				background transparent
+				width 20px
+				height 20px
+				border-radius 50%
+				position absolute
+				margin-left auto
+				margin-right auto
+				left 0
+				right 0
+				transition all 0.4s linear
+				transform scale(0)
+				z-index 1
+		&:active,
+		&:focus
+			outline 0px !important
+			-webkit-appearance none
+		&:hover>span>small
+			background rgba(grey800,0.1)
+			transform scale(10)
+
+.control-input
+	margin-bottom 30px
+	position relative
+	
+label
+	position absolute
+	color grey500
+	top 15%
+	left 0
+	pointer-events none
+	transition all .4s ease-in-out
+	
+input
+	width 100%
+	display block
+	border none
+	appearance none
+	border-radius 2px
+	border-bottom 1px solid grey300
+	transition all .4s ease-in-out
+	&:focus
+		outline  none
+		appearance none
+		border-color amber500
+	&:focus,
+	&:hover,
+	&:valid ~ label
+		top -15px
+		font-size 12px
+
+.titulo-especial
+	text-shadow shadow1
+	margin 0px auto
+	margin-bottom 80px
+	padding 0px
+	
+.contenedor-center
+	margin 0px auto
+	width 80%
+	padding 0px
+	font-size 16px
+	display block
+	
+logo
+	font-family lobster
+	margin 0px auto
+	padding 0px
+					
+logo-shadow
+	font-family lobster
+	text-shadow shadow1
+	margin 0px auto
+	padding 0px
 a
 	-webkit-appearance none
 	text-decoration none

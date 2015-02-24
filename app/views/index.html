@@ -1,6 +1,28 @@
 {% extends "layout.html" %}
 {% block content %}
-
+	<header>
+		<div class="cMenu" data-ng-controller="appController">
+			<nav>
+				<ul>
+					<li><a href=""><h2 class="logo">Ciza<small>Software Factory</small></h2></a></li>
+					<li><img src="/img/icons/pencil.png" alt="">
+						<ul class="submenu">
+							{% for md in menuDemo2%}
+								<li><a href="#/{{md.temp}}"> {{md.desc}} </a></li>
+							{% endfor %}
+						</ul>
+					</li>
+					<li><img src="/img/icons/polaroids.png" alt=""></li>
+					<li><img src="/img/icons/takeoff.png" alt=""></li>
+					<li><img src="/img/icons/volume.png" alt="">
+						<ul class="submenu">
+							<li data-ng-repeat="md in menuDemo"><a href="#/{{md.temp}}"> {{md.desc}} </a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
 	<section id="dashboard">
 		<div ng-view></div>
 	</section>

@@ -1,8 +1,33 @@
 {% extends "layout.html" %}
 {% block content %}
-	<h1>Bienvenido</h1>
-	<form method="post" action="/log-in">
-		<input type="text" name="user">
-		<button>Log in</button>
-	</form>
-{% endblock content %}
+	<section id="login-block" class="login">
+		<div id="log-in" class="contenedor-center contenedor-login">
+			<div class="titulo-especial">
+				<h2> {{ saludo }} <logo-shadow>Ciza</logo-shadow></h2>
+			</div>
+			<div class="form-controls form-controls-100">
+				<div class="control-input">
+					<input type="text" id="email" class="input-small" required>
+					<label for="Email">Email</label>
+				</div>
+			</div>
+			<div class="form-controls form-controls-100">
+				<div class="control-input">
+					<input type="password" id="pass" class="input-small" required>
+					<label for="pass">Password</label>
+				</div>
+			</div>
+			<div class="form-controls form-controls-100">
+				<div class="control-button">
+					<button class="btn btn-small button-normal"><span>Ingresar<small></small></span></button>
+				</div>
+			</div>
+			<div class="login-footer">
+				<a href="">
+					<p>Restablecer contraseña</p>
+					<p><logo>SandBox</logo></p>
+				</a>
+			</div>
+		</div>
+	</section>
+{% endblock %}
