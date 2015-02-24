@@ -1,0 +1,355 @@
+//CORS
+red400 	= #EF5350
+red700 	= #D50000
+red900  = #B71C1C
+teal050 = #E0F2F1
+teal100 = #B2DFDB
+teal200 = #80CBC4
+teal300 = #4DB6AC
+teal500 = #009688
+teal600 = #00897B
+teal700 = #00796B
+teal800 = #00695C
+teal900 = #004D40
+amber050 = #FFF8E1
+amber100 = #FFECB3
+amber200 = #FFE082
+amber300 = #FFD54F
+amber500 = #FFC107
+amber600 = #FFB300
+amber700 = #FFA000
+amber800 = #FF8F00
+amber900 = #FF6F00
+grey500 = #9E9E9E
+grey050 = #FAFAFA
+grey100 = #F5F5F5
+grey200 = #EEEEEE
+grey300 = #E0E0E0
+grey400 = #BDBDBD
+grey800 = #424242
+grey900 = #212121
+
+@font-face
+	font-family sanspro
+	src url(../fonts/SourceSansPro-Regular.ttf) format('truetype')
+
+@font-face
+	font-family lobster
+	src url(../fonts/Lobster-Regular.ttf) format('truetype')
+
+@font-face
+	font-family lato
+	src url(../fonts/Lato-Regular.ttf) format('truetype')
+
+shadow1 = 0 1px 3px rgba(grey800,0.30), 0 1px 2px rgba(grey800,0.22)
+shadow2 = 0 3px 6px rgba(grey800,0.16), 0 3px 6px rgba(grey800,0.23);
+shadow3 = 0 10px 20px rgba(grey800,0.19), 0 6px 6px rgba(grey800,0.23);
+shadow4 = 0 14px 28px rgba(grey800,0.25), 0 10px 10px rgba(grey800,0.22);
+shadow5 = 0 19px 38px rgba(grey800,0.30), 0 15px 12px rgba(grey800,0.22)
+
+a
+	-webkit-appearance none
+	text-decoration none
+
+html, body
+	font-family sanspro
+	font-size 14px
+	height 100%
+	background white
+	margin 0px
+	padding 0px
+
+header
+	width 100%
+	height 20%
+	#logo-section
+		width 45%
+		background transparent
+		display inline-block
+		.logo
+			width 95%
+			margin 0 auto
+			margin-top .6em
+			border 1px dashed grey500
+			border-radius 2px
+			height 100px
+	#menu-section
+		display inline-block
+		margin-top 2.5em
+		float right
+		width 55%
+footer
+	bottom 0
+	box-shadow shadow1
+	font-size 10px
+	position fixed
+	text-align center
+	transition color .4s ease-in-out
+	width 100%
+	z-index 2
+	.footer-section-1
+		background grey200
+		width 100%
+		float left
+		padding 1em
+		.footer-menu
+			width 60%
+			float left
+			display inline-block
+		.footer-sociales
+			width 40%
+			float right
+			display inline-block
+	.footer-section-2
+		background grey100
+		width 100%
+		float right
+		padding 1em
+		color grey900
+		font-weight bold
+	a
+		color rgba(white,0.8)
+		transition all .2s ease-in-out
+	&:hover>a
+		color amber500
+h1
+	font-weight lighter
+	font-size 5em
+	padding 0px
+	margin 0px
+
+h2
+	font-weight lighter
+	font-size 4em
+	padding 0px
+	margin 0px
+	
+h3
+	font-weight lighter
+	font-size 3em
+	padding 0px
+	margin 0px	
+
+h4
+	font-weight lighter
+	font-size 2em
+	padding 0px
+	margin 0px
+
+h5
+	font-size 1em
+	font-weight lighter
+	padding 0px
+	margin 0px
+	
+h1,h2,h3,h4,h5
+	position relative
+	color grey800
+	&:hover>small
+		opacity 1
+	small
+		font-size 0.2em
+		opacity 0.5
+		position absolute
+		left 0
+		bottom 0
+		transition opacity 0.4s ease-in-out
+
+.contenedor-center
+	margin 0px auto
+	width 80%
+	padding 0px
+	font-size 16px
+	display block
+
+.form-controls-100
+	width 100%
+
+.input-small
+	height 25px
+
+.form-controls
+	top 20%
+	margin 20px auto
+	position relative
+
+.btn
+	position relative
+	border-radius 2px
+	padding 10px 20px 10px 20px
+	border none
+	transition all .2s ease-in-out
+	overflow hidden
+	&:hover
+		box-shadow shadow1
+
+.btn-small
+	width 40%
+.btn-mediun
+	width 80%
+.btn-large
+	width 100%
+	
+.button-error
+	background red400
+	color rgba(white,0.8)
+	&:hover
+		color rgba(white,1)
+.button-warning
+	background amber200
+	color rgba(grey900,0.8)
+	&:hover
+		color rgba(grey900,1)
+.button-normal
+	background rgba(grey100,1)
+	color rgba(grey900,0.8)
+	&:hover
+		color rgba(grey900,1)
+
+.link-animado
+	overflow hidden
+	a
+		span
+			position relative
+			z-index 3
+			padding 0
+			small
+				background transparent
+				width 20px
+				height 20px
+				border-radius 50%
+				position absolute
+				margin-left auto
+				margin-right auto
+				left 0
+				right 0
+				transition all 0.4s linear
+				transform scale(0)
+		&:active,
+		&:focus
+			outline 0px !important
+			-webkit-appearance none
+		&:hover>span>small
+			background rgba(grey800,0.1)
+			transform scale(5)
+
+.control-button
+	button
+		span
+			position relative
+			z-index 3
+			small
+				background transparent
+				width 20px
+				height 20px
+				border-radius 50%
+				position absolute
+				margin-left auto
+				margin-right auto
+				left 0
+				right 0
+				transition all 0.4s linear
+				transform scale(0)
+				z-index 1
+		&:active,
+		&:focus
+			outline 0px !important
+			-webkit-appearance none
+		&:hover>span>small
+			background rgba(grey800,0.1)
+			transform scale(10)
+
+// 992408683
+// 955303428
+
+.control-input
+	margin-bottom 30px
+	position relative
+	
+label
+	position absolute
+	color grey500
+	top 15%
+	left 0
+	pointer-events none
+	transition all .4s ease-in-out
+	
+input
+	width 100%
+	display block
+	border none
+	appearance none
+	border-radius 2px
+	border-bottom 1px solid grey300
+	transition all .4s ease-in-out
+	&:focus
+		outline  none
+		appearance none
+		border-color amber500
+	&:focus,
+	&:hover,
+	&:valid ~ label
+		top -15px
+		font-size 12px
+
+/*MENU*/
+
+.body-menu
+	background white
+	background -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(white,1)), color-stop(5%, rgba(white,1)), color-stop(100%, rgba(grey100,1)))
+	background -webkit-radial-gradient(center, ellipse cover, rgba(white,1) 0%, rgba(white,1) 5%, rgba(grey100,1) 100%)
+	width 100%
+	height 100%
+
+#menu-horizontal
+	width 100%
+
+ul
+	list-style none
+	margin 0 auto
+	padding 0
+	text-align center
+	width 100%
+
+.menu-horizontal
+	ul
+		li
+			display block
+			float right
+			border-bottom 1px solid amber300
+			padding-top 1em
+			padding-bottom 1em
+			transition all .4s ease-in-out
+			width 22%
+			
+.menu-footer
+	margin 0 auto
+	ul
+		width 100%
+		li
+			font-size 14px
+			padding-top 2em
+			padding-bottom 2em
+			width 30%
+			a
+				color grey500
+				transition all 0.4 ease-in-out
+				&:hover
+					color grey900
+			
+.menu-sociales
+	margin 0 auto
+	ul
+		li
+			font-size 3em
+			padding .5em	
+.menu
+	margin 0 auto
+	ul
+		li
+			display inline-block
+			transition all .4s ease-in-out
+			// &:hover,active
+			// 	border-bottom 2px solid amber300
+
+/*MENU*/
