@@ -1,33 +1,36 @@
 {% extends "layout.html" %}
 {% block content %}
 	<section id="login-block" class="login">
-		<div id="log-in" class="contenedor-center contenedor-login">
-			<div class="titulo-especial">
-				<h2> {{ saludo }} <logo-shadow>Ciza</logo-shadow></h2>
-			</div>
-			<div class="form-controls form-controls-100">
-				<div class="control-input">
-					<input type="text" id="email" class="input-small" required>
-					<label for="Email">Email</label>
+		<form method="post" action="/log-in">
+			<div id="log-in" class="contenedor-center contenedor-login">
+				<div class="titulo-especial">
+					<h3> {{ saludo }} </h3>
+					<logo-shadow>Ciza</logo-shadow>
+				</div>
+				<div class="form-controls form-controls-100">
+					<div class="control-input">
+						<input type="text" id="email" name="email" class="input-small" required>
+						<label for="Email">Email</label>
+					</div>
+				</div>
+				<div class="form-controls form-controls-100">
+					<div class="control-input">
+						<input type="password" id="pass" name="pass" class="input-small" required>
+						<label for="pass">Password</label>
+					</div>
+				</div>
+				<div class="form-controls form-controls-100">
+					<div class="control-button">
+						<button class="btn btn-small button-teal"><small></small><span>Ingresar</span></button>
+					</div>
+				</div>
+				<div class="login-footer">
+					<a href="">
+						<p>Restablecer contraseña</p>
+						<p><logo>Ciza</logo></p>
+					</a>
 				</div>
 			</div>
-			<div class="form-controls form-controls-100">
-				<div class="control-input">
-					<input type="password" id="pass" class="input-small" required>
-					<label for="pass">Password</label>
-				</div>
-			</div>
-			<div class="form-controls form-controls-100">
-				<div class="control-button">
-					<button class="btn btn-small button-normal"><span>Ingresar<small></small></span></button>
-				</div>
-			</div>
-			<div class="login-footer">
-				<a href="">
-					<p>Restablecer contraseña</p>
-					<p><logo>SandBox</logo></p>
-				</a>
-			</div>
-		</div>
+		</form>
 	</section>
 {% endblock %}

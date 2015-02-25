@@ -22,36 +22,17 @@ define(['services/routeResolver'],function () {
 			$routeProvider.when('/'+obj.temp, route.resolve(obj.temp));
 		});
 		//rutas fijas
+		$routeProvider.when('/dashboard', route.resolve('dashboard'));
 		$routeProvider.when('/404', route.resolve('404'));
-		$routeProvider.when('/', route.resolve('home'));
+		$routeProvider.when('/', route.resolve('dashboard'));
 
-		$routeProvider.when('/', { redirectTo: '/home' });
+		$routeProvider.when('/', { redirectTo: '/dashboard' });
 		$routeProvider.otherwise({ redirectTo: '/404' });
 	}]);
 
 	app.controller('appController', ['$scope','$http','dataResource', function($scope,$http,dataResource) {
 	    var ng = $scope;
 	    ng.menuDemo = [];
-
-	    $http.get('/menu')
-	    	.success(function(data){
-	    		ng.menuDemo = data;
-	    		console.log('before ----------------------');
-	    		console.info(data);
-	    	});
-
-	    
-	    // angular.forEach(APP.DATA.CONFIG.MENU, function(val){
-	    // 	$scope.menuDemo.push(val);
-	    // });
-
-	    // sconsole.info(ng.prueba);
-	    // $http.get("json/menu.json").success(function (data){
-	    // 	ng.datos = data;
-	    // });
-
-	    // console.info(ng.datos);
-	    // ng.dataResource = dataResource.get();
 	}]);
 
 

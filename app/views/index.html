@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 	<header>
-		<div class="cMenu" data-ng-controller="appController">
+		<div class="cMenu" >
 			<nav>
 				<ul>
 					<li><a href=""><h2 class="logo">Ciza<small>Software Factory</small></h2></a></li>
@@ -13,12 +13,8 @@
 						</ul>
 					</li>
 					<li><img src="/img/icons/polaroids.png" alt=""></li>
-					<li><img src="/img/icons/takeoff.png" alt=""></li>
-					<li><img src="/img/icons/volume.png" alt="">
-						<ul class="submenu">
-							<li data-ng-repeat="md in menuDemo"><a href="#/{{md.temp}}"> {{md.desc}} </a></li>
-						</ul>
-					</li>
+					<li><img src="/img/icons/gear.png" alt=""></li>
+					<li><a href="/log-out" ><img src="/img/icons/unlocked.png" alt=""></a></li>
 				</ul>
 			</nav>
 		</div>

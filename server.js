@@ -41,7 +41,7 @@ var menu = [
 	    ];
 //funciones anonimas
 var isntLoggedIn = function (req,res,next){
-	if (!req.session.user) {
+	if (!req.session.email) {
 		res.redirect('/');
 		return;
 	};
@@ -49,8 +49,8 @@ var isntLoggedIn = function (req,res,next){
 };
 
 var isLoggedIn = function (req,res,next){
-	if (req.session.user) {
-		res.redirect('/app');
+	if (req.session.email) {
+		res.redirect('/index');
 		return;
 	};
 	next();
@@ -91,9 +91,12 @@ server.get('/',isLoggedIn, function(req,res){
 	});
 });
 
-server.get('/index',isLoggedIn, function(req,res){
+server.get('/index',isntLoggedIn, function(req,res){
 	res.render('index',{
-		prueba: 'hola que hace',
+		user: {
+			email: req.session.email,
+			pass: req.session.pass
+		},
 		menuDemo2: menu
 	});
 });
@@ -109,9 +112,10 @@ server.get('/log-out',function(req,res){
 });
 
 server.post('/log-in',function(req,res){
-	users.push(req.body.user);
-	req.session.user = req.body.user;
-	res.redirect('/app');
+	users.push(req.body.email);
+	req.session.email = req.body.email;
+	req.session.pass = req.body.pass;
+	res.redirect('/index');
 });
 
 server.io.route('hello?',function(req){

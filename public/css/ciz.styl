@@ -8,6 +8,11 @@ amber600 = #FFB300
 amber700 = #FFA000
 amber800 = #FF8F00
 amber900 = #FF6F00
+blue500 = #2196F3
+blue600 = #1E88E5
+blue700 = #1976D2
+blue800 = #1565C0
+blue900 = #0D47A1
 grey500 = #9E9E9E
 grey050 = #FAFAFA
 grey100 = #F5F5F5
@@ -110,7 +115,7 @@ header
 					height 48px
 					border-radius 50%
 					transition all 0.2s linear
-					&:hover,&:active, &:focus
+					&:hover,&:active,&:focus
 						box-shadow shadow4
 					&:hover ~ .submenu
 						max-height 200px
@@ -122,8 +127,8 @@ header
 
 //body
 html, body
-	background -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(teal600,1)), color-stop(5%, rgba(teal600,1)), color-stop(100%, rgba(teal900,1)))
-	background -webkit-radial-gradient(center, ellipse cover, rgba(teal600,1) 0%, rgba(teal600,1) 5%, rgba(teal900,1) 100%)
+	background -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(blue500,1)), color-stop(5%, rgba(blue500,1)), color-stop(100%, rgba(teal900,1)))
+	background -webkit-radial-gradient(center, ellipse cover, rgba(blue500,1) 0%, rgba(blue500,1) 5%, rgba(blue900,1) 100%)
 	font-family sanspro
 	font-size 14px
 	height 100%
@@ -132,31 +137,33 @@ html, body
 
 //PreloadPage
 .loading
-	position relative
-	margin 0 auto
-	z-index 2
-	text-align center
 	color white
-	font-family sanspro
-	
+	top 45%
+	left 50%
+	transform translate(-50%, -45%)
+	font-family sanspro !important
+	overflow hidden
+	position absolute
+	text-align center !important
+	z-index 2
 
 .loading-msg
 	border 1px solid white
 	border-radius 50%
 	font-family lobster !important
-	font-size 3em
-	height 100px
-	line-height 2.3em
+	font-size 2.5em
+	height 130px
+	line-height 3.7em
 	margin 0 auto
 	margin-top 8%
 	margin-bottom .3em
-	width 100px
+	width 130px
 	z-index 3
-	-webkit-animation logoAnimation 2.5s
+	-webkit-animation logoAnimation 2.5s infinite
+		
 
 .loading-mask
-	// background rgba(grey900,.7)
-	background grey900
+	background rgba(grey900,.9)
 	width 100%
 	height 100%
 	position fixed
@@ -166,17 +173,16 @@ html, body
 	
 //log-in
 .login
-	display inline-block
-	float right
-	background white
+	background transparent
 	color grey800
+	display block
 	height 100%
-	width 25%
-	text-align center
-	z-index 0
-	text-shadow textshadow1
-	box-shadow shadow5
+	margin 0 auto
 	position relative
+	text-align center
+	text-shadow textshadow1
+	width 25%
+	z-index 0
 
 .contenedor-login
 	position absolute
@@ -185,17 +191,30 @@ html, body
 	margin-right auto
 	left 0
 	right 0
-	
+
+.login-footer
+	display block
+	margin 0 auto
+	width 100%
+	text-align center
+	font-size 10px
+	line-height 2px !important
+	a
+		color white
+		transition all .2s ease-in-out
+		&:hover
+			color amber500
 //Commons
 .btn
-	position relative
-	border-radius 2px
-	padding 10px 20px 10px 20px
 	border none
+	border-radius 2px
+	box-shadow shadow1
+	position relative
+	padding 10px 20px 10px 20px
 	transition all .2s ease-in-out
 	overflow hidden
 	&:hover
-		box-shadow shadow1
+		box-shadow shadow3
 
 .btn-small
 	width 40%
@@ -219,68 +238,94 @@ html, body
 	color rgba(grey900,0.8)
 	&:hover
 		color rgba(grey900,1)
-		
+.button-teal
+	background rgba(blue700,1)
+	color rgba(white,0.8)
+	&:hover
+		color rgba(white,1)
+
 .control-button
 	button
+		height 3em
+		position relative
+		text-align center
+		transition all .2s linear
 		span
-			position relative
+			position absolute
 			z-index 3
-			small
-				background transparent
-				width 20px
-				height 20px
-				border-radius 50%
-				position absolute
-				margin-left auto
-				margin-right auto
-				left 0
-				right 0
-				transition all 0.4s linear
-				transform scale(0)
-				z-index 1
-		&:active,
+			top 50%
+			left 50%
+			transform translate(-50%, -50%)
+		small
+			background transparent
+			width 20px
+			height 20px
+			border-radius 50%
+			position absolute
+			margin-left auto
+			margin-right auto
+			left 0
+			right 0
+			transition all .4s linear
+			transform scale(0)
+			z-index 1
 		&:focus
 			outline 0px !important
 			-webkit-appearance none
-		&:hover>span>small
-			background rgba(grey800,0.1)
+		&:active
+			box-shadow shadow1
+			outline 0px !important
+			-webkit-appearance none
+		&:hover>small
+			// background rgba(amber500,.5)
 			transform scale(10)
 
 .control-input
 	margin-bottom 30px
 	position relative
-	
-label
-	position absolute
-	color grey500
-	top 15%
-	left 0
-	pointer-events none
-	transition all .4s ease-in-out
+	label
+		position absolute
+		color white
+		top 15%
+		left 0
+		pointer-events none
+		transition all .4s ease-in-out
 	
 input
-	width 100%
-	display block
-	border none
 	appearance none
+	border none
 	border-radius 2px
-	border-bottom 1px solid grey300
+	border-bottom 1px solid white
+	display block
+	line-height 1.8em
 	transition all .4s ease-in-out
+	width 100%
+	background transparent
+	color white
+	&:hover,
 	&:focus
+		line-height 2em
 		outline  none
 		appearance none
 		border-color amber500
+		color white
 	&:focus,
 	&:hover,
+	&:active,
 	&:valid ~ label
-		top -15px
+		top -20px
 		font-size 12px
 
+.form-controls
+	margin 20px auto
+	position relative
+	
 .titulo-especial
 	text-shadow shadow1
 	margin 0px auto
-	margin-bottom 80px
+	margin-bottom 2em
 	padding 0px
+	color white
 	
 .contenedor-center
 	margin 0px auto
@@ -299,6 +344,7 @@ logo-shadow
 	text-shadow shadow1
 	margin 0px auto
 	padding 0px
+	font-size 4em
 a
 	-webkit-appearance none
 	text-decoration none
@@ -360,11 +406,22 @@ h1
 h2
 	font-family lobster
 	font-size 5em
+
+h3
+	font-family sanspro
+	font-size 3em
 	
 //Animaciones
 @-webkit-keyframes logoAnimation {
 	0%		{color:white;border: 1px solid white;}
 	25% 	{color:red400;border: 1px solid red400;}
 	50%		{color:amber500;border: 1px solid amber500;}
-	100%	{color:cyan;border: 1px solid cyan;}
+	75%		{color:cyan;border: 1px solid cyan;}
+	100%	{color:white;border: 1px solid white;}
+}
+
+@-webkit-keyframes resplandorBtn {
+	0%		{background: amber700;}	
+	50%		{background: amber800;}
+	100%	{background: amber700;}
 }
